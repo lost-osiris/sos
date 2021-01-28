@@ -1315,7 +1315,8 @@ class Plugin(object):
 
     def add_copy_spec(self, copyspecs, sizelimit=None, maxage=None,
                       tailit=True, pred=None, tags=[]):
-        print(copyspecs)
+        logger = logging.getLogger("mowens")
+        logger.info(copyspecs)
         """Add a file, directory, or regex matching filepaths to the archive
 
         :param copyspecs: A file, directory, or regex matching filepaths
@@ -1631,7 +1632,8 @@ class Plugin(object):
                        chroot=True, runat=None, env=None, binary=False,
                        sizelimit=None, pred=None, subdir=None,
                        changes=False, foreground=False, tags=[]):
-        print(" ".join(cmds))
+        logger = logging.getLogger("mowens")
+        logger.info(" ".join(cmds))
         """Run a program or a list of programs and collect the output
 
         Output will be limited to `sizelimit`, collecting the last X amount
